@@ -1,36 +1,36 @@
 .form-container {
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 input,
 select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
+  background-color: #3089e7;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 button:disabled,
 button[disabled] {
-    pointer-events: none;
-    cursor: not-allowed;
-    opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
