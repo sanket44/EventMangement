@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="image-container">
+    <div class="confetti"></div>
+    <img src="assets/event.png" alt="Event planning made easy" />
+  </div>
+  <div class="d-flex flex-column">
+    <h1 class="align-self-center">Plan any event, seamlessly</h1>
+    <a class="hero-button align-self-center" routerLink="/eventCreator"
+      >Start planning</a
+    >
+  </div>
+
+  <div class="featured-vendor">
+    <h2>Featured Vendors</h2>
+    <div class="vendor-cards">
+      <div class="vendor-card" *ngFor="let vendor of vendors">
+        <img
+          class="vendor-image"
+          src="assets/event.png"
+          alt="{{ vendor.companyName }}"
+        />
+        <h3 class="vendor-name">{{ vendor.companyName }}</h3>
+        <ul class="services-list">
+          <li *ngFor="let service of vendor.typesOfServices">{{ service }}</li>
+        </ul>
+        <button class="view-profile-button" (click)="onCardClick(vendor.id)">
+          Click to place Order
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="popular-services">
+    <h2>Popular Services</h2>
+    <div class="service-grid">
+      <div class="service-card" *ngFor="let service of vendor.typesOfServices">
+        <img
+          class="service-icon"
+          src="path/to/service-icon.png"
+          alt="{{ service }}"
+        />
+        <p class="service-name">{{ service }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>

@@ -1,0 +1,20 @@
+<!-- flowers-order.component.html -->
+<form [formGroup]="flowersOrderForm" (ngSubmit)="submitFlowersOrder()">
+
+  <label for="bookingDate">Booking Date:</label>
+  <input type="datetime-local" formControlName="bookingDate" />
+
+<div formArrayName="flowerDetails" class="p-2 d-flex flex-column">
+    <div *ngFor="let flowerGroup of flowerDetailsArray.controls; let i = index">
+        <div [formGroupName]="i">
+            <label for="flowerType">Flower Type:</label>
+            <input type="text" formControlName="flowerType" />
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" formControlName="quantity" />
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary align-self-end" [disabled]="flowersOrderForm.invalid"  (click)="addFlowerDetails()">Add Flower</button>
+</div>
+<button class="btn btn-secondary" type="submit">Submit flower Order</button>
+</form>

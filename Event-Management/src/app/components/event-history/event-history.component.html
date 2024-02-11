@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center"><h2>Select Event</h2></div>
+      <select class="form-control" id="eventSelect" [(ngModel)]="selectedEvent">
+        <option *ngFor="let event of events" [ngValue]="event">
+          {{ event.eventName }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="selectedEvent" class="col-md-12">
+      <h2 class="text-center">{{ selectedEvent.eventName }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let order of selectedEvent?.orders" class="col-md-6">
+      <div class="order-container">
+        <h3>Order ID: {{ order.id }}</h3>
+        <p>Booking Date: {{ order.bookingDate | date : "medium" }}</p>
+        <p>Vendor ID: {{ order.vendorId }}</p>
+        <p>Company Name: {{ order.companyName }}</p>
+        <p>Type of Order: {{ order.typeOfOrder }}</p>
+        <p *ngIf="order.quantity">Quantity: {{ order.quantity }}</p>
+
+        <div *ngIf="order.typeOfOrder === 'FLOWERS'" class="flower-details">
+          <h4>Flower Details</h4>
+          <div
+            *ngFor="let flowerDetail of order.flowerDetails"
+            class="flower-detail-container"
+          >
+            <p>Flower Type: {{ flowerDetail.flowerType }}</p>
+            <p>Quantity: {{ flowerDetail.quantity }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

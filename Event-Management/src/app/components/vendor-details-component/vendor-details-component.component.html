@@ -1,0 +1,42 @@
+<div class="container-fluid d-flex flex-column" *ngIf="vendor">
+  <h2 class="text-center">{{ vendor.companyName }}</h2>
+  <div *ngIf="events.length > 0">
+    <label for="event" class="form-label">Select Event:</label>
+    <select [(ngModel)]="selectedEvent" class="form-select">
+      <option *ngFor="let event of events" [ngValue]="event">
+        {{ event.eventName }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <div *ngIf="selectedEvent.eventName" class="d-flex flex-column">
+      <label for="service" class="form-label">Select Service:</label>
+      <select [(ngModel)]="selctedService" class="form-select">
+        <option
+          *ngFor="let service of vendor.typesOfServices"
+          [value]="service"
+        >
+          {{ service }}
+        </option>
+      </select>
+
+      <div *ngIf="selctedService == 'CATERING'">
+        <app-catering-order
+          (cateringOrder)="addorder($event)"
+        ></app-catering-order>
+      </div>
+      <div *ngIf="selctedService == 'FLOWERS'">
+        <app-flowers-order (flowerOrder)="addorder($event)"></app-flowers-order>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary float-end"
+      *ngIf="selectedEvent.eventName"
+      (click)="finalaliseEvent()"
+    >
+      Add orders To event
+    </button>
+  </div>
+</div>
+
+{{ events | json }}

@@ -1,0 +1,30 @@
+<div>
+    <!-- profile.component.html -->
+<h2>Edit Profile</h2>
+
+<form>
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password">
+  </div>
+
+  <div>
+    <label for="profilePhoto">Profile Photo:</label>
+    <input type="file" id="profilePhoto" name="profilePhoto" (change)="onFileSelected($event)">
+  </div>
+
+  <button (click)="saveProfile()">Save</button>
+</form>
+
+<!-- Display the profile photo -->
+<div *ngIf="profilePhoto">
+  <h3>Profile Photo Preview:</h3>
+  <img [src]="profilePhoto" alt="Profile Photo" style="max-width: 200px;">
+</div>
+
+</div>

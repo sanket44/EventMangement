@@ -1,0 +1,10 @@
+button:disabled,
+button[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.backgroundHome {
+  background-color: #dacee5;
+}
