@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+  <a routerLink="/home" class="navbar-brand px-3"
+    >E V E N T - M A N A G E M E N T</a
+  ><br />
+  <button
+    class="navbar-toggler"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbar"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse justify-content-end" id="navbar">
+    <div class="navbar-nav navbar-text">
+      <ng-container *ngIf="authService.loggedIn(); else loggedOut">
+        <a routerLink="/confirmOrder" class="nav-link">ConfirmEvent</a>
+        <a routerLink="/eventHistory" class="nav-link">EventHistory</a>
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </ng-container>
+      <ng-template #loggedOut>
+        <a routerLink="/login" class="nav-link">Login</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

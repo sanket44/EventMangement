@@ -1,0 +1,36 @@
+/* styles.css or your custom stylesheet */
+.navbar {
+    background-color: #343a40;
+    /* Dark background color */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    /* Adjust the font size */
+    color: #ffffff;
+    /* White text color */
+}
+
+.navbar-brand:hover {
+    color: #17a2b8;
+    /* Hover color */
+}
+
+.navbar-toggler-icon {
+    border-color: #ffffff;
+    /* White color for the toggle icon */
+}
+.nav-link {
+    font-size: 1.2rem;
+    color: #ffffff;
+    /* White text color for links */
+    margin: 0 10px;
+    /* Add some space between links */
+    cursor: pointer;
+    /* Add cursor pointer */
+}
+
+.nav-link:hover {
+    color: #17a2b8;
+    /* Hover color for links */
+}

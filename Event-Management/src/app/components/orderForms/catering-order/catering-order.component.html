@@ -1,0 +1,10 @@
+<!-- catering-order.component.html -->
+<form [formGroup]="cateringOrderForm" (ngSubmit)="submitCateringOrder()">
+    <label for="quantity">Quantity:</label>
+    <input type="number" formControlName="quantity" />
+
+    <label for="bookingDate">Booking Date:</label>
+    <input type="datetime-local" formControlName="bookingDate" />
+
+    <button type="submit" [disabled]="cateringOrderForm.invalid" class="btn btn-primary">Submit Catering Order</button>
+</form>
